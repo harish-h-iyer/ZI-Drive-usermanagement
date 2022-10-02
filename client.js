@@ -13,8 +13,14 @@ const phoneNumber = process.argv[5];
 const gender = process.argv[6];
 const password = process.argv[7];
 
+const toFindEmail = process.argv[8];
 
 client.createUser({email: email, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, gender: gender, password: password}, (error, response) => {
     console.log("Error : ", error); 
     console.log("Response : ", response); 
 });
+
+client.readUser({email: toFindEmail}, (error, response)=> {
+    console.log("Error: ", error);
+    console.log("Response: ", response);
+})

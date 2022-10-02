@@ -32,15 +32,19 @@ module.exports = class API {
         }
     }
 
-    readUsers = (call, callback) => {
-
-    }
-
-    readUserStream = (call, callback) => {
-        
-    }
-
-    NowTime = (call, callback) => {
-        
+    readUser = (call, callback) => {
+        var data = call.request;
+        console.log(data);
+        var query = {
+            email: data.email
+        };
+        userModel.findOne(query, function(error, foundUser){
+            if(error){
+                callback(null, error);
+            }else{
+                console.log(foundUser);
+                callback(null, foundUser);
+            }
+        })
     }
 };

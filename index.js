@@ -28,18 +28,10 @@ async function connectDB() {
 async function main() {
     await connectDB().catch(console.dir);
     let server = new grpc.Server();
-    // server.addService(services.UserSvcService, {
-    //     register: api.register,
-    //     login: api.login,
-    //     verify: api.verify,
-    //     getUser: api.getUser,
-    // });
 
     server.addService(userPackage.User.service, {
         "createUser": api.register,
-        "readUsers": api.readUsers,
-        "readUserStream": api.readUserStream,
-        "NowTime": api.NowTime,
+        "readUser": api.readUser
     });
     
     let address = process.env.HOST + ":" + process.env.PORT;
