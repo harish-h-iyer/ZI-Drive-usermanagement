@@ -81,7 +81,7 @@ module.exports = class API {
                 var uploadDirectory = process.env.UPLOAD_PATH;
 
                 console.log("Generating root folder........");
-                var fileDirectory = data.email;
+                var fileDirectory = data.email+"/";
                 console.log("FolderName: " + fileDirectory);
                 const directoryPath = path.join(uploadDirectory, fileDirectory);
                 console.log("Removing Folder at " + directoryPath);

@@ -15,17 +15,17 @@ const password = process.argv[7];
 
 const toFindEmail = process.argv[8];
 
-// client.createUser({email: email, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, gender: gender, password: password}, (error, response) => {
-//     console.log("Error : ", error); 
-//     console.log("Response : ", response); 
-// });
+client.createUser({email: email, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, gender: gender, password: password}, (error, response) => {
+    console.log("Error : ", error); 
+    console.log("Response : ", response); 
+});
 
 // client.readUser({email: toFindEmail}, (error, response)=> {
 //     console.log("Error: ", error);
 //     console.log("Response: ", response);
 // })
 
-client.deleteUser({email: email}, (error, response)=> {
-    console.log("Error: ", error);
-    console.log("Response: ", response);
-})
+// client.deleteUser({email: email}, (error, response)=> {
+//     console.log("Error: ", error);
+//     console.log("Response: ", response);
+// })

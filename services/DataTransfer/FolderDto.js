@@ -4,7 +4,7 @@ exports.savefolderObject = function(owner, folderName) {
         folderName: folderName,
         isRoot: true,
         description: "Root folder for user " + owner,
-        folderPath: "/" + folderName,
+        folderPath: "/",
         access: owner,
         created_at: new Date()
     }
