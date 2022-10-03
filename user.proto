@@ -5,6 +5,7 @@ package userPackage;
 service User{
     rpc createUser(UserItem) returns (UserItem); //unary 
     rpc readUser(QueryParams) returns (UserItem);
+    rpc deleteUser(QueryParams) returns (response);
 }
 
 message Text{
@@ -24,8 +25,8 @@ message QueryParams{
     string email = 1;
 }
 
-message UserItems{
-    repeated UserItem items=1;
+message response{
+    string message=1;
 }
 
 message NoParams{}

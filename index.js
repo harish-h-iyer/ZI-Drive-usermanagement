@@ -31,7 +31,8 @@ async function main() {
 
     server.addService(userPackage.User.service, {
         "createUser": api.register,
-        "readUser": api.readUser
+        "readUser": api.readUser,
+        "deleteUser": api.deleteUser
     });
     
     let address = process.env.HOST + ":" + process.env.PORT;
